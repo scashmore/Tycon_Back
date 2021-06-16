@@ -29,8 +29,8 @@ app.use('/api', restaurantRouter)
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 
 http.listen(PORT, ()=> {
-    console.log('listening on PORT')
+    console.log('listening on PORT '+PORT)
 });
