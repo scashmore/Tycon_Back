@@ -19,7 +19,7 @@ createRestaurant = (req, res) => {
     restaurant
         .save()
         .then(() => {
-            //socket.emit("product-created", restaurant)
+            socket.emit("product-created", restaurant)
             return res.status(201).json({
                 success: true,
                 id: restaurant._id,
@@ -86,7 +86,7 @@ deleteRestaurant = async (req, res) => {
                 .status(404)
                 .json({ success: false, error: `Restaurant not found` })
         }
-        socket.emit("product-deleted", restaurant)
+        //socket.emit("product-deleted", restaurant)
         return res.status(200).json({ success: true, data: restaurant })
     }).catch(err => console.log(err))
 }
