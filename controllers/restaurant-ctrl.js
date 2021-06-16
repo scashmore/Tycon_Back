@@ -19,7 +19,7 @@ createRestaurant = (req, res) => {
     restaurant
         .save()
         .then(() => {
-            socket.emit("product-created", restaurant)
+            //socket.emit("product-created", restaurant)
             return res.status(201).json({
                 success: true,
                 id: restaurant._id,
@@ -59,7 +59,7 @@ updateRestaurant = async (req, res) => {
         restaurant
             .save()
             .then(() => {
-            socket.emit("product-updated", restaurant)
+            //socket.emit("product-updated", restaurant)
                 return res.status(200).json({
                     success: true,
                     id: restaurant._id,
