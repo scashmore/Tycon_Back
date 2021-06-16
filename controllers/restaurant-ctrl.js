@@ -19,6 +19,7 @@ createRestaurant = (req, res) => {
     restaurant
         .save()
         .then(() => {
+            socket.emit("product-created", restaurant)
             return res.status(201).json({
                 success: true,
                 id: restaurant._id,

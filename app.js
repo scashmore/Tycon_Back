@@ -15,9 +15,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-// Socketio.on("connection", (socket) => {
-    
-// });
+Socketio.on("connection", (socket) => {
+    console.log("connection made")
+    global.socket = socket;
+});
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
