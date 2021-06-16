@@ -85,7 +85,7 @@ deleteRestaurant = async (req, res) => {
                 .status(404)
                 .json({ success: false, error: `Restaurant not found` })
         }
-
+        socket.emit("product-deleted", restaurant)
         return res.status(200).json({ success: true, data: restaurant })
     }).catch(err => console.log(err))
 }
