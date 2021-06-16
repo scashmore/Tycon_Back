@@ -111,8 +111,8 @@ getRestaurants = async (req, res) => {
         }
         if (!restaurants.length) {
             return res
-                .status(404)
-                .json({ success: false, error: `Restaurant not found` })
+                .status(200)
+                .json({ success: true,data: [] })
         }
         return res.status(200).json({ success: true, data: restaurants })
     }).catch(err => console.log(err))
