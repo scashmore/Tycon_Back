@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:start": "cross-env NODE_ENV=development nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev:live-db": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
